@@ -19,5 +19,5 @@ angular.module('techsysPowerApp')
 
 	$scope.changeTab = function ($index) {
 		$scope.selectedTab = $index;
-	}
+	};
   });
