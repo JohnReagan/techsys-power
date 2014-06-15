@@ -2,7 +2,7 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-var logfmt = require("logfmt");
+var logfmt = require('logfmt');
 
 //require('./routes')(app);
 app.use(logfmt.requestLogger());
