@@ -27,7 +27,26 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/services', {
+        templateUrl: 'views/services.html',
+        controller: 'ServicesCtrl'
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+  });
+
+angular.module('techsysPowerApp')
+  .controller('NavCtrl', function ($scope) {
+    $scope.links = ['Home', 'About', 'Services', 'Contact'];
+
+  $scope.selectedIndex = 0;
+
+  $scope.itemClicked = function (index) {
+    selectedIndex = index;
+  }
   });

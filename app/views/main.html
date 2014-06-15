@@ -1,23 +1,26 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+  <p>TechSys Power International is dedicated to providing turnkey solutions for customers' ac 
+and dc power needs anywhere in the world.  We work with the top manufacturers of 
+leading edge critical power technologies to ensure reliable redundant power for mission 
+critical facilities. We provide integration and installation support to Integrators, Factory 
+Reps and end users.  We also provide power quality, energy savings, load studies, and 
+electrical maintenance services.</p>
 </div>
 
 <div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+  <h4>Current Projects</h4>
+  <ul>
+    <li ng-repeat="project in currentProjects">
+      {{project.name}}
+      <p>{{project.snippet}}</p>
+    </li>
+  </ul>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <h4>Completed Projects</h4>
+  <ul>
+    <li ng-repeat="project in completedProjects">
+      {{project.name}}
+      <p>{{project.snippet}}</p>
+    </li>
+  </ul>
 </div>

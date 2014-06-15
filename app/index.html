@@ -14,6 +14,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    
   </head>
   <body ng-app="techsysPowerApp">
     <!--[if lt IE 7]>
@@ -22,19 +23,36 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">TechSys Power International</h3>
+      <div class="header" ng-controller="NavCtrl">
+        <nav class="navbar navbar-default" role="navigation" >
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#my-nav-bar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" ng-href="#">TechSys Power International</a>
+            </div>
+
+            <!-- nav links and such -->
+            <div class="collapse navbar-collapse" id="my-nav-bar">
+              <ul class="nav navbar-nav" ng>
+                <li ng-class="{'active': selectedIndex == 0}"><a ng-href="#">Home</a></li>
+                <li ng-class=""><a ng-href="#/about" ng-click="itemClicked(1)">About</a></li>
+                <li><a ng-href="#/services">Services</a></li>
+                <li><a ng-href="#/contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
 
       <div ng-view=""></div>
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p>TechSys Power International, LLC</p>
       </div>
     </div>
 
