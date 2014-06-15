@@ -39,7 +39,7 @@ angular
         redirectTo: '/'
       });
   });
-
+/*
 angular.module('techsysPowerApp')
   .controller('NavCtrl', function ($scope) {
     $scope.links = ['Home', 'About', 'Services', 'Contact'];
@@ -48,5 +48,24 @@ angular.module('techsysPowerApp')
 
   $scope.itemClicked = function (index) {
     selectedIndex = index;
+  }
+  });
+*/
+  angular.module('techsysPowerApp')
+  .controller('NavCtrl', function ($scope) {
+    $scope.links = [
+      {'name':'Home',
+      'route': '#'},
+      {'name':'About',
+      'route': '#/about'},
+      {'name': 'Services',
+      'route': '#/services'},
+      {'name': 'Contact', 
+      'route': '#/contact'}];
+
+  $scope.selectedTab = 0;
+
+  $scope.changeTab = function ($index) {
+    $scope.selectedTab = $index;
   }
   });

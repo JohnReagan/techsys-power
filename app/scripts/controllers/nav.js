@@ -5,21 +5,19 @@
 
 angular.module('techsysPowerApp')
   .controller('NavCtrl', function ($scope) {
-    // $scope.links = [
-    // 	{'name':'Home',
-    // 	'route': '/',
-    // 	'active': false},
-    // 	{'name':'About',
-    // 	'route': '/about',
-    // 	'active': false},
-    // 	{'name': 'Services',
-    // 	'route': '/services',
-    // 	'active': false},
-    // 	 'Contact'];
+    $scope.links = [
+    	{'name':'Home',
+    	'route': '#'},
+    	{'name':'About',
+    	'route': '#/about'},
+    	{'name': 'Services',
+    	'route': '#/services'},
+    	{'name': 'Contact', 
+    	'route': '#/contact'}];
 
-	$scope.selectedIndex = 0;
+	$scope.selectedTab = 0;
 
-	$scope.changeTab = function (index) {
-		selectedIndex = index;
+	$scope.changeTab = function ($index) {
+		$scope.selectedTab = $index;
 	}
   });

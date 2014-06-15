@@ -14,6 +14,8 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+   
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     
   </head>
   <body ng-app="techsysPowerApp">
@@ -33,26 +35,28 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" ng-href="#">TechSys Power International</a>
+              <a class="navbar-brand logo" ng-href="#">TechSys Power International</a>
             </div>
 
             <!-- nav links and such -->
             <div class="collapse navbar-collapse" id="my-nav-bar">
-              <ul class="nav navbar-nav" ng>
-                <li ng-class="{'active': selectedIndex == 0}"><a ng-href="#">Home</a></li>
-                <li ng-class=""><a ng-href="#/about" ng-click="itemClicked(1)">About</a></li>
-                <li><a ng-href="#/services">Services</a></li>
-                <li><a ng-href="#/contact">Contact</a></li>
+              <ul class="nav navbar-nav" >
+                <li ng-repeat="link in links" 
+                ng-class="{'active': selectedTab == $index}"
+                ng-click="changeTab($index)">
+                  <a ng-href="{{link.route}}">{{link.name}}</a>
+                </li>
               </ul>
             </div>
           </div>
         </nav>
       </div>
 
-      <div ng-view=""></div>
+      <div class="main" ng-view=""></div>
 
       <div class="footer">
-        <p>TechSys Power International, LLC</p>
+        <span>TechSys Power International, LLC</span>
+        <span class="pull-right">Created by John Reagan | 2014</span>
       </div>
     </div>
 
