@@ -9,6 +9,7 @@
  */
 angular.module('techsysPowerApp')
   .controller('MainCtrl', function ($scope) {
+    
     $scope.currentProjects = [
     	{'name': 'AFCENT/ARCENT',
     	'snippet': 'Backup Power for Communication Systems Support in Southwest Asia (SWA)'},
@@ -33,4 +34,15 @@ angular.module('techsysPowerApp')
 		{'name': 'LF Wade International Airport',
 		'snippet': 'Replace (3) Generators in St. George, Bermuda'}
     ];
+
+    $scope.currentProjectIndex = 0;
+    $scope.currentProject = $scope.currentProjects[$scope.currentProjectIndex];
+
+    $scope.nextProject = function () {
+    	if ($scope.currentProjectIndex >= $scope.currentProjects.length-1) {
+    		$scope.currentProjectIndex=0;
+    	} else {
+    		$scope.currentProjectIndex++;
+    	}
+    }
   });
