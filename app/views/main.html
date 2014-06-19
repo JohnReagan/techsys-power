@@ -6,21 +6,11 @@ critical facilities. We provide integration and installation support to Integrat
 Reps and end users.  We also provide power quality, energy savings, load studies, and 
 electrical maintenance services.</p>
 </div>
+ 
+<h4>Current Projects</h4>
 
-<div class="row marketing">
-  
-  <h4>Current Projects</h4>
-  <!-- <div class="row" ng-repeat="project in currentProjects" >
-    <div class="col-xs-1 vcenter">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </div>
-    <project class="col-xs-9 vcenter" ></project>
-    <div class="col-xs-1 vcenter">
-      <span class="glyphicon glyphicon-chevron-right"  ng-click="nextProject()"></span>
-    </div>
-  </div> -->
-  <project ng-repeat="project in currentProjects"></project>
-
-  <h4>Completed Projects</h4>
-    <project ng-repeat="project in completedProjects"></project>
-</div>
+<carousel interval="5000" disable-animation="true">
+  <slide ng-repeat="project in currentProjects">
+    <project></project>
+  </slide>
+</carousel>

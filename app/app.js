@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -38,7 +39,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
 /*
 angular.module('techsysPowerApp')
   .controller('NavCtrl', function ($scope) {
@@ -51,7 +52,7 @@ angular.module('techsysPowerApp')
   }
   });
 */
-  angular.module('techsysPowerApp')
+
   .controller('NavCtrl', function ($scope) {
     $scope.links = [
       {'name':'Home',
@@ -68,4 +69,16 @@ angular.module('techsysPowerApp')
   $scope.changeTab = function ($index) {
     $scope.selectedTab = $index;
   };
-  });
+  })
+
+  //directive to fix carousel
+  .directive('disableAnimation', function($animate){
+    return {
+        restrict: 'A',
+        link: function($scope, $element, $attrs){
+            $attrs.$observe('disableAnimation', function(value){
+                $animate.enabled(!value, $element);
+            });
+        }
+    }
+});

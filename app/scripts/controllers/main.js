@@ -44,5 +44,5 @@ angular.module('techsysPowerApp')
     	} else {
     		$scope.currentProjectIndex++;
     	}
-    }
+    };
   });
